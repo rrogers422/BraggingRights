@@ -1,6 +1,6 @@
 const { Bet } = require('../models');
 
-const betData = [
+const betdata = [
     {
         terms: 'Win two games of pool in a row',
         prize: 'Buy dinner',
@@ -19,5 +19,8 @@ const betData = [
         user_id: 3,
         challenger_id: 1,
     }
+];
 
-]
+const seedBets = () => Bet.bulkCreate(betdata);
+
+module.exports = seedBets;
