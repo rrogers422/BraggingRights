@@ -4,15 +4,17 @@ const { bet } = require('../../models/Bet');
 
 
 
-router.get('/', function(req, res){
-    res.send({type: 'GET'});
-});
-
-router.post('/', function(req,res){
-    res.send({type: 'POST'});
+router.get('/', async (req, res) => {
+    try {
+        const newBet = await Bet.findAll();
+    res.status(200).json(newBet);
+    } catch (err) {
+        res.status(400).json(err.message);
+    }
 });
 
 //route for getting bets by user id
 
+router.post
 
 module.exports = router;
