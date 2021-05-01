@@ -1,7 +1,9 @@
 const { History } = require('../models');
 
-const betdata = [
+const historydata = [
     {
-
+        wins: 4,
+        losses: 3,
+        user_id: 1,
     }
 ];

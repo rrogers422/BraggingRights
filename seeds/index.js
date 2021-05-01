@@ -10,7 +10,7 @@ const seedAll = async () => {
 
     await seedBets();
 
-    await seedHistory();
+    // await seedHistory();
 
     process.exit(0);
 };
