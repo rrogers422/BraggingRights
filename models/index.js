@@ -4,13 +4,18 @@ const User = require('./User');
 const UserBet = require('./UserBet');
 
 Bet.belongsToMany(User, {
-    through: UserBet
+    through: UserBet,
 });
 
 User.belongsToMany(Bet, {
-    through: UserBet
+    through: UserBet,
 })
 
 History.belongsTo(User);
 
-
+module.exports = {
+    Bet,
+    History,
+    User,
+    UserBet,
+  };
