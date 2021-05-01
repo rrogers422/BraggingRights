@@ -10,10 +10,6 @@ Bet.init({
         primaryKey: true,
         autoIncrement: true,
       },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     terms: {
         type: DataTypes.STRING,
         allowNull: false,
