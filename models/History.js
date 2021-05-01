@@ -10,10 +10,6 @@ History.init({
         primaryKey: true,
         autoIncrement: true,
       },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     wins: {
         type: DataTypes.STRING,
         allowNull: false,
