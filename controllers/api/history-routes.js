@@ -12,8 +12,4 @@ router.get('/', async (req, res) => {
       }
 })
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> 20555c33ae363e3d462c16fd0f756b38151d53ef

@@ -1,4 +1,4 @@
-const { Bet } = require('../models');
+const Bet = require('../models/Bet');
 
 const betdata = [
     {
