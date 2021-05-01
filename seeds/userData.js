@@ -2,23 +2,19 @@ const User = require('../models/User');
 
 const userdata = [
     {
-        first_name: 'Michael',
-        last_name: 'Scott',
+        username: 'Michael_Scott',
         email: 'no1Boss@DunderMifflin.com'
     },
     {
-        first_name: 'Dwight',
-        last_name: 'Shrute',
+        username: 'Dwight_Schrute',
         email: 'asstRegionalManager@DunderMifflin.com'
     },
     {
-        first_name: 'Toby',
-        last_name: 'Flenderson',
+        username: 'Toby_Flenderson',
         email: 'HRRep@DunderMifflin.com'
     },
     {
-        first_name: 'Kelly',
-        last_name: 'Kapoor',
+        username: 'Kelly_Kapoor',
         email: 'marryMeRyan@DunnerMifflin.com'
     }
 ];
