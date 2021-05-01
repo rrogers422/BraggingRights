@@ -35,12 +35,8 @@ UserBet.init(
     }
     
     );
-<<<<<<< HEAD
+
     
 
     module.exports = UserBet;
     
-=======
-
-    module.exports = UserBet;
->>>>>>> 8f4df7c438da2847d2d249226acde130825d5c49

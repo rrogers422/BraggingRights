@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+require('console.table');
 
 //set up express app
 const app = express();

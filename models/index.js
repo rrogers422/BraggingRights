@@ -8,13 +8,8 @@ Bet.belongsToMany(User, {
 });
 
 User.belongsToMany(Bet, {
-<<<<<<< HEAD
     through: UserBet
 });
-=======
-    through: UserBet,
-})
->>>>>>> 8f4df7c438da2847d2d249226acde130825d5c49
 
 History.belongsTo(User);
 
