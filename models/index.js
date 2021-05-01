@@ -1,14 +1,15 @@
 const Bet = require('./Bet');
 const History = require('./History');
 const User = require('./User');
+const UserBet = require('./UserBet');
 
 Bet.belongsToMany(User, {
-    through: UserBet;
+    through: UserBet
 });
 
 User.belongsToMany(Bet, {
-    through: UserBet;
-})
+    through: UserBet
+});
 
 History.belongsTo(User);
 
