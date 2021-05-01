@@ -1,13 +1,18 @@
 const router = require('express').Router();
-const Bet = require('../../models/Bet');
-const { bet } = require('../../models/Bet');
+const { Bet, User } = require('../../models');
 
 
 
 router.get('/', async (req, res) => {
     try {
-        const newBet = await Bet.findAll();
-    res.status(200).json(newBet);
+        const newBet = await Bet.findAll({
+            attributes: ['terms', 'prize'],
+            include: [{
+                model: User,
+                attributes: ['username']
+            }]
+        })
+        res.status(200).json(newBet);
     } catch (err) {
         res.status(400).json(err.message);
     }
@@ -15,6 +20,6 @@ router.get('/', async (req, res) => {
 
 //route for getting bets by user id
 
-router.post
+// router.post
 
 module.exports = router;
