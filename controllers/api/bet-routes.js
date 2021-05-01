@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Bet, User } = require('../../models');
+const { Bet, User, UserBet } = require('../../models');
 
 
 
@@ -9,8 +9,12 @@ router.get('/', async (req, res) => {
             attributes: ['terms', 'prize'],
             include: [{
                 model: User,
-                attributes: ['username']
-            }]
+                attributes:['username'],
+               through: {
+                   attributes:[]
+               } 
+            }],
+    
         })
         res.status(200).json(newBet);
     } catch (err) {
@@ -20,6 +24,6 @@ router.get('/', async (req, res) => {
 
 //route for getting bets by user id
 
-// router.post
+router.post
 
 module.exports = router;
