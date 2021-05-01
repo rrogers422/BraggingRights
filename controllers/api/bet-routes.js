@@ -12,4 +12,7 @@ router.post('/', function(req,res){
     res.send({type: 'POST'});
 });
 
+//route for getting bets by user id
+
+
 module.exports = router;
