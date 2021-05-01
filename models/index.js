@@ -12,5 +12,3 @@ User.belongsToMany(Bet, {
 })
 
 History.belongsTo(User);
-
-
