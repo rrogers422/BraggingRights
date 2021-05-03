@@ -2,8 +2,7 @@ const hbs = require('express-handlebars');
 
 const cookieParser = require('cookie-parser');
 const { User } = require('../models');
-const express = require('express');
-const app = express();
+const router = require('express').Router();
 
 app.use(cookieParser());
 
@@ -14,10 +13,10 @@ app.use((req, res, next) => {
     next();
   });
   
-  var hbsContent = {username: '', loggedIn: false, title: "Sorry, but you are not logged in at this time.", body: "PLease log in or sign up."};
+  var hbsContent = {username: '', loggedIn: false, title: "Sorry, but you are not logged in at this time.", body: "Please log in or sign up."};
   var sessionChecker = (req, res, next) => {
     if (req.session.user && req.cookies.user_sid){
-      res.render('home');
+      res.render('/home');
     }
     else {
       next();
@@ -27,10 +26,11 @@ app.use((req, res, next) => {
   //route for home
   app.get('/', sessionChecker, async (req, res) => {
     try{
-    res.render('home');
+    res.send('/home');
     }
-    catch(error){console.log(error)}
-  })
+    catch(error){
+      res.status(500).json(err);
+  }
   
   // route for sign up
   app.route('/signup')
@@ -52,10 +52,12 @@ app.use((req, res, next) => {
     });
   
     // route for log in
-    app.route('/login')
-      .get((req, res) => {
-      res.render('login', hbsContent);
-      })
+    router.get('/login',(req, res) => {
+      if (req,session.loggedIn){
+        res.redirect('/');
+        return;
+      }})
+
       .post((req, res) => {
       var username = req.body.username;
       var password = req.body.password;
@@ -108,3 +110,4 @@ app.use((req, res, next) => {
   })
 
   module.exports = app;
+})
