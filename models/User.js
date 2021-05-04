@@ -17,13 +17,21 @@ User.init(
         },
     username: {
         type: DataTypes.STRING,
+        unique: true,
         allowNull: false,
     },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-    }
-},
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [8],
+        },
+      },
+    },
 {
     sequelize,
     freezeTableName: true,
