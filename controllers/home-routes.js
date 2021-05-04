@@ -4,7 +4,7 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 //route for home
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
