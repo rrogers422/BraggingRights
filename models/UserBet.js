@@ -36,4 +36,7 @@ UserBet.init(
     
     );
 
+    
+
     module.exports = UserBet;
+    
