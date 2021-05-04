@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       attributes: ['wins', 'losses'],  
     include: [ { 
       model: User,
-      attributes: ['first_name', 'last_name']
+      attributes: ['username']
   }]
   })
     res.status(200).json(historyData);
