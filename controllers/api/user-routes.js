@@ -50,6 +50,9 @@ router.post('/login', async (req, res) => {
 
 });
 
+// get route for create bet page
+// post route for what happens after send invite button.
+
 
 
 module.exports = router;
