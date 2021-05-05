@@ -13,6 +13,7 @@ User.belongsToMany(Bet, {
 
 History.belongsTo(User);
 
+
 module.exports = {
     Bet,
     History,

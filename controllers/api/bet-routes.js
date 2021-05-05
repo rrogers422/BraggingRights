@@ -4,15 +4,21 @@ const withAuth = require('../../utils/auth');
 
 
 // Route to get all active bets for current user
-router.get('/bet', withAuth, async (req, res) => {
+router.get('/active', async (req, res) => {
     try {
         const bets = await Bet.findAll({
-            where: { user_id: req.session.user_id, status: "active" },
-            });
-
-        const activeBets = bets.map((bet) => bet.get({ plain: true }));
-        
-        res.render('bet', activeBets);
+            where: {user_id: 1, status: "accepted" },
+            attributes: { exclude: ['status', 'id', 'user_id', 'challenger_id'] },
+            include: [{model: User, through: {attributes: []}, attributes: { exclude : ['id', 'email', 'password']}}],  
+        });
+        const deBets = bets.map((i) => i.get({ plain: true }));
+        // const data = [];
+        // for (let i=0; i<deBets.length; i++) {
+        //     const user1 = users[0].username;
+        //     const user2 = users[1].username;
+        //     data.push(terms,prize,user1,user2)
+        // }
+        res.render('bet', {deBets});
     } catch (err) {
         res.status(400).json(err.message);
     }

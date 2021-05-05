@@ -10,7 +10,15 @@ UserBet.init(
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
+    },
+
+    username: {
+        type: DataTypes.STRING,
+        references: {
+            model: 'user',
+            key: 'username',
         },
+    },
 
     user_id: {
         type: DataTypes.INTEGER,
@@ -19,6 +27,7 @@ UserBet.init(
             key: 'id',
         },
     },
+
     bet_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -26,7 +35,8 @@ UserBet.init(
             key: 'id',
         },
         },
-    },
+
+},
     {
         sequelize,
         freezeTableName: true,
