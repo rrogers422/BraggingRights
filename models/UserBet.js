@@ -11,7 +11,6 @@ UserBet.init(
         primaryKey: true,
         autoIncrement: true,
     },
-
     username: {
         type: DataTypes.STRING,
         references: {
@@ -19,7 +18,6 @@ UserBet.init(
             key: 'username',
         },
     },
-
     user_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -27,7 +25,6 @@ UserBet.init(
             key: 'id',
         },
     },
-
     bet_id: {
         type: DataTypes.INTEGER,
         references: {

@@ -7,31 +7,33 @@ const withAuth = require('../../utils/auth');
 router.get('/active', async (req, res) => {
     try {
         const bets = await Bet.findAll({
-            where: {user_id: 1, status: "accepted" },
+            // user_id will be changed to req.session.id when login is working
+            where: {user_id: req.session.id, status: "accepted" },
             attributes: { exclude: ['status', 'id', 'user_id', 'challenger_id'] },
             include: [{model: User, through: {attributes: []}, attributes: { exclude : ['id', 'email', 'password']}}],  
         });
+        
         const deBets = bets.map((i) => i.get({ plain: true }));
-        // const data = [];
-        // for (let i=0; i<deBets.length; i++) {
-        //     const user1 = users[0].username;
-        //     const user2 = users[1].username;
-        //     data.push(terms,prize,user1,user2)
-        // }
+
         res.render('bet', {deBets});
     } catch (err) {
         res.status(400).json(err.message);
     }
 });
 
-//route for getting bets by user id
+//route for creating new bets
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
-        const createBet = await Bet.create({
+        const newBet = await Bet.create({
             ...req.body,
-        user_id: req.session.user_id})
-        res.status(200).json(createBet);
+            status:'Not accepted',
+            user_id: 1,
+            UserBet: {
+
+            }
+         });
+        res.status(200).json(newBet);
     } catch (err) {
         res.status(400).json(err);
     }
