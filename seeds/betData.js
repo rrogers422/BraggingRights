@@ -21,6 +21,13 @@ const betdata = [
         user_id: 3,
         challenger_id: 1,
         status:'Won'
+    },
+    {
+        terms: 'Throw a rock further',
+        prize: '$20',
+        user_id: 1,
+        challenger_id: 3,
+        status:'accepted'
     }
 ];
 

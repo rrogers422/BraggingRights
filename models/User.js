@@ -33,12 +33,6 @@ User.init(
       },
     },
 {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
-},
-{
     hooks: {
         beforeCreate: async (newUserInfo) => {
             newUserInfo.password = await brcypt.hash(newUserInfo.password, 10);

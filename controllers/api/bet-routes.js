@@ -3,20 +3,22 @@ const { Bet, User, UserBet } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
-router.get('/', async (req, res) => {
+// Route to get all active bets for current user
+router.get('/active', async (req, res) => {
     try {
-        const newBet = await Bet.findAll({
-            attributes: ['terms', 'prize'],
-            include: [{
-                model: User,
-                attributes: ['username'],
-                through: {
-                    attributes: []
-                }
-            }],
-
-        })
-        res.status(200).json(newBet);
+        const bets = await Bet.findAll({
+            where: {user_id: 1, status: "accepted" },
+            attributes: { exclude: ['status', 'id', 'user_id', 'challenger_id'] },
+            include: [{model: User, through: {attributes: []}, attributes: { exclude : ['id', 'email', 'password']}}],  
+        });
+        const deBets = bets.map((i) => i.get({ plain: true }));
+        // const data = [];
+        // for (let i=0; i<deBets.length; i++) {
+        //     const user1 = users[0].username;
+        //     const user2 = users[1].username;
+        //     data.push(terms,prize,user1,user2)
+        // }
+        res.render('bet', {deBets});
     } catch (err) {
         res.status(400).json(err.message);
     }

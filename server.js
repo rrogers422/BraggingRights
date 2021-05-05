@@ -5,6 +5,7 @@ const sequelize = require('./config/connection');
 require('console.table');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const helpers = require('./utils/helpers');
 
 //set up express app
 const app = express();
@@ -12,7 +13,7 @@ const app = express();
 //listen for requests
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
