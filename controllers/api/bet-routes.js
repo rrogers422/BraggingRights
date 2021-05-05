@@ -2,19 +2,17 @@ const router = require('express').Router();
 const { Bet, User, UserBet } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-let currentUser = req.session.user_id;
-router.get('/activeBets', withAuth, async (req, res) => {
+
+// Route to get all active bets for current user
+router.get('/bet', withAuth, async (req, res) => {
     try {
-        const newBet = await Bet.findAll({
-            where: { user_id: currentUser, status: "active" },
-            // include: [{
-            //     model: User,
-            //     attributes: ['username'],
-            //     through: {
-            //         attributes: []
-            //     }
+        const bets = await Bet.findAll({
+            where: { user_id: req.session.user_id, status: "active" },
             });
-        res.status(200).json(newBet);
+
+        const activeBets = bets.map((bet) => bet.get({ plain: true }));
+        
+        res.render('bet', activeBets);
     } catch (err) {
         res.status(400).json(err.message);
     }
