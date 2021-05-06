@@ -19,7 +19,7 @@ router.get('/active/bets', async (req,res) =>{
       console.log(activeBets);
       let betCount = activeBets.count;
       console.log("betcount is:",betCount )
-      res.json(activeBets);
+      res.json(activeBets.count);
     }catch(err){
       console.log(err.message);
       res.status(500).json(err);
