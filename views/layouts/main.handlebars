@@ -16,9 +16,9 @@
     <h1>Welcome to Napkin Bets</h1>
   </header>
   <nav>
-    <a href="/">Home</a>
+    <a href="/betStats">Home</a>
     {{#if logged_in}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <a class="link" href="/" id="logout">Logout</a>
     {{else}}
     <a href="/login">Login</a>
     {{/if}}
