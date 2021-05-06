@@ -1,12 +1,26 @@
+
 <h2>Active bets:</h2> 
 {{#each deBets as |bet|}}
+<div class = "container">
 <section class="active-bet">
   <div class="bet-header">
     <h3> The Bet: {{bet.terms}}</h3>
     <h4> The Bettors:</h4>
-    <p>{{{destruct_users bet.users}}}</p>
+    {{!-- <p>{{{destruct_users bet.users}}}</p> --}}
     <h4> The Prize:</h4>
     <p>{{bet.prize}}</p>
+
+  <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Result(Select)
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="/api/history/win" >Win</a></li>
+    <li><a href="/api/history/loss">Loss</a></li>
+    {{!-- <li><a href="#"></a></li> --}}
+  </ul>
   </div>
-</section>
+  </div>
+  </section>
+</div>
+
 {{/each}}

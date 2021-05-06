@@ -27,6 +27,6 @@ router.get('/', withAuth, async (req, res) => {
     res.status(500).json(err.message);
   }
 });
-
+router.get('/win')
 
 module.exports = router;
