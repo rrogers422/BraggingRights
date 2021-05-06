@@ -23,13 +23,13 @@ Bet.init({
       allowNull: false,
       references: {
         model: 'user',
-        key: 'username'
+        key: 'username',
       }
     },
     status:{
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'Not accepted'
+      defaultValue: 'Accepted'
     },
     user_id: {
         type: DataTypes.INTEGER,

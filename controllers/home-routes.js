@@ -22,7 +22,7 @@ router.get('/login', (req, res) => {
 
 router.get('/profile', async (req, res) => {
   try {
-    const numActiveBets = await Bet.count({where: {user_id: req.session.user_id, status: "accepted"}});
+    const numActiveBets = await Bet.count({where: {user_id: req.session.user_id, status: "Accepted"}});
     // // const wins = await History.findOne(
     // //   {where: {user_id: req.session.user_id},
     // //   include: [{attributes: wins}]
@@ -46,13 +46,13 @@ router.get('/active', async (req, res) => {
   console.log('sd')
   try {
     const bets = await Bet.findAll({
-        where: {user_id: req.session.username, status: "accepted" },
-        attributes: { exclude: ['status', 'id', 'user_id', 'challenger_id'] },
-        include: [{model: User, through: {attributes: []}, attributes: { exclude : ['id', 'email', 'password']}}],  
+        where: {user_id: req.session.user_id, status: "Accepted" },
+        attributes: ['terms','prize','user_id','status'],
+        include: [{model: User, through: {attributes: ['username']}, attributes: { exclude : ['id', 'email', 'password']}}],
       });
     
     const deBets = bets.map((i) => i.get({ plain: true }));
-
+    console.log({deBets})
     res.render('bet', {deBets});
   } catch (err) {
       res.status(400).json(err.message);
@@ -68,6 +68,8 @@ router.get('/signup', (req, res) => {
 
   res.render("signup")
 })
+
+
   
   
 
