@@ -1,0 +1,15 @@
+
+{{#if bets.length}}
+<div class="card">
+    <div class="card-header">
+        <h3>Bet History</h3>
+        {{#each bets as |bet|}}
+        <p>{{bet.terms}}</p>
+        <p>{{bet.prize}}</p>
+        <p>{{bet.status}}</p>
+        <a style="font-size:smaller">{{user.name}}</a>
+        {{/each}}
+    </div>
+</div>
+
+{{/if}}
