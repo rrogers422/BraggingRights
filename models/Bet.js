@@ -18,6 +18,7 @@ Bet.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
+<<<<<<< HEAD
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -26,6 +27,8 @@ Bet.init({
         key: 'username',
       }
     },
+=======
+>>>>>>> 33fe83cd0439b288798a53175ecd7a4f3b88213c
     status:{
       type: DataTypes.STRING,
       allowNull: false,
