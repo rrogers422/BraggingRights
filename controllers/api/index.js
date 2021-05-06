@@ -10,7 +10,6 @@ const userRoutes = require('./user-routes');
 
 router.use('/history', historyRoutes);
 
-
 router.use('/bets', betRoutes);
 
 router.use('/users', userRoutes)
