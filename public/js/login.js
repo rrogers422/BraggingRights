@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
       console.log(response);
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/profile');
       } else {
         alert('Sorry but you have failed to log in.');
       }
