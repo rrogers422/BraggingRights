@@ -1,0 +1,12 @@
+<h2>Active bets:</h2> 
+{{#each deBets as |bet|}}
+<section class="active-bet">
+  <div class="bet-header">
+    <h3> The Bet: {{bet.terms}}</h3>
+    <h4> The Bettors:</h4>
+    <p>{{{destruct_users bet.users}}}</p>
+    <h4> The Prize:</h4>
+    <p>{{bet.prize}}</p>
+  </div>
+</section>
+{{/each}}
