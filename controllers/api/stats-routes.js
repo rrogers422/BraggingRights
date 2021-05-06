@@ -3,7 +3,6 @@ const { User, Bet } = require('../../models');
 const { Op } = require("sequelize");
 // Middleware
 const withAuth = require('../../utils/auth');
-const { count } = require('../../models/Bet');
 
 //Route to get active bets
 router.get('/active/bets', async (req,res) =>{
