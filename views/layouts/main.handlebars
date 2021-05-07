@@ -20,13 +20,14 @@
     <h1>Napkin Bets</h1>
   </header>
   <nav>
-    <a href="/betStats">Home</a>
+    <a href="/">Home</a>
+    <a href="/betStats">Your Stats</a>
     {{#if logged_in}}
     <a href="#" id="logout">Logout</a>
     <a href="/add">Create Bet</a>
     {{else}}
-    <a href="/signup">Sign Up</a>
     <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
     {{/if}}
   </nav>
   <main>
