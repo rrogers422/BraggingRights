@@ -6,7 +6,9 @@ const { Op } = require("sequelize");
 router.get('/', withAuth,async (req, res) => {
   try{
     const betHistoryData = await History.findAll({
-      user_id: req.session.user_id,
+      where: {
+        user_id: req.session.user_id,
+      },
       attributes:[],
       include: [{
        model: User,
@@ -20,7 +22,8 @@ router.get('/', withAuth,async (req, res) => {
   });
   const bets = betHistoryData.map(bet => bet.get({ plain: true }));
   console.log(bets);
-  res.render('history', { bets });
+  res.render('history', { bets ,
+    logged_in: req.session.logged_in});
   }catch (err) {
     res.status(500).json(err.message);
   }
