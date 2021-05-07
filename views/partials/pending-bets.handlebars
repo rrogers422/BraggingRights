@@ -1,5 +1,9 @@
 <div>
     <div>
-       <h4><a href="/api/bets/pending">Pending Bets: {{count}}</a></h4>
+        {{#if count}}
+        <h4><a href="/api/bets/pending">Pending Bets: {{count}}</a></h4>
+        {{else}}
+        <h4>No Pending Bets</h4>
+       {{/if}}
     </div>
 </div>
