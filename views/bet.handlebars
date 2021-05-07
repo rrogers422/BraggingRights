@@ -14,10 +14,10 @@
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Result(Select)
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
-    <form action="/api/history/status/wins/{{bet.id}}?_method=PUT" method="POST">
+    <form action="/api/bets/status/wins/{{bet.id}}?_method=PUT" method="POST">
       <li><input class = "valueSubmit" type = "submit" name = "wins" value = "Win"></li>
     </form>
-    <form action="/api/history/status/losses/{{bet.id}}?_method=PUT" method="POST">
+    <form action="/api/bets/status/losses/{{bet.id}}?_method=PUT" method="POST">
       <li><input class = "valueSubmit" type = "submit" name = "losses" value = "Loss"></li>
     </form>
   </ul>
@@ -27,3 +27,4 @@
 </div>
 
 {{/each}}
+
