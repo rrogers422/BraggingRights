@@ -1,22 +1,22 @@
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-    <div>
-      <a href="/signup">SignUp</a>
-      </div>
-  </div>
+<main class='container'>
+  <div class="form-signin">
+  <form>
+        <div class="row justify-space-between-md"></div>
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
+    <div class="form-floating login-form">
+      <input type="email" class="form-control form-login" id="floatingInput email-login" placeholder="name@example.com">
+      <label for="floatingInput email-login">Email address</label>
+    </div>
+    <div class="form-floating form-group">
+      <input type="password" class="form-control" id="floatingPassword password-login" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary form-group" type="submit">Sign in</button>
+  <button class="w-100 btn btn-lg btn-primary form-group" type="submit">Sign Up</button>
+  </div>
+  </main>
+
+  </form>
+</div>
   <script src="./js/login.js"></script>
