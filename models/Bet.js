@@ -21,7 +21,7 @@ Bet.init({
     status:{
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'Accepted'
+      defaultValue: 'Not accepted'
     },
     user_id: {
         type: DataTypes.INTEGER,
@@ -44,6 +44,7 @@ Bet.init({
     freezeTableName: true,
     underscored: true,
     modelName: 'bet',
+    timestamps: false
 }
 )
 

@@ -20,7 +20,7 @@ const betdata = [
         prize: 'Buy a beer',
         user_id: 3,
         challenger_id: 1,
-        status:'Won'
+        status:'accepted'
     },
     {
         terms: 'Throw a rock further',

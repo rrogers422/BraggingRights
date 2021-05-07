@@ -38,6 +38,7 @@ History.init({
     freezeTableName: true,
     underscored: true,
     modelName: 'history',
+    timestamps: false
 }
 )
 

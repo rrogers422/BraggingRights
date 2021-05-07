@@ -30,8 +30,21 @@ router.get('/', withAuth,async (req, res) => {
     res.status(500).json(err.message);
   }
 });
-router.get('/win', withAuth, async (req, res) => {
-  
+
+router.put('/status/wins/:id', withAuth, async (req, res) => {
+  try {
+  const newHistory = await History.increment('wins', { where: { user_id: req.session.user_id, bet_id: req.params.id }})
+  res.status(200).json(newHistory); 
+} catch(err) {
+  res.status(500).json(err.message);
+}
+});
+
+router.put('/status/losses/:id', withAuth, async (req, res) => {
+  History.increment({
+    where: {user_id: req.session.id, bet_id: req.params.id},
+    attributes: ['losses'],  
+  })  
 })
 
 module.exports = router;

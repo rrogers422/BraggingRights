@@ -4,6 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const methodOverride = require('method-override');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -16,7 +17,7 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {maxAge: 21600},
+  cookie: {maxAge: 300000},
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -24,6 +25,7 @@ const sess = {
   })
 };
 app.use(session(sess));
+app.use(methodOverride('_method'));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);

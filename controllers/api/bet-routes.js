@@ -8,7 +8,7 @@ router.get('/active', withAuth, async (req, res) => {
   try {
     const bets = await Bet.findAll({
         where: {user_id: 1, status: "accepted" },
-        attributes: ['terms','prize','user_id','status'],
+        attributes: ['terms','prize','user_id','status', 'id'],
         // include: [{model: User, through: {attributes: ['username']}, attributes: { exclude : ['id', 'email', 'password']}}],
       });
     
@@ -36,13 +36,11 @@ router.get('/pending', withAuth, async (req, res) => {
   }
 });
 
-
 router.post('/', async (req, res) => {
     try {
         const newBet = await Bet.create({
             terms: req.body.terms,
             prize: req.body.prize,
-            username: req.body.username,
             user_id: req.session.user_id,
             });
             res.status(200).json(newBet);

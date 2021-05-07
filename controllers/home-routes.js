@@ -18,7 +18,7 @@ router.get('/signup', (req, res) => {
   res.render("signup")
 })
 
-
+router.get('/add', (req,res) => res.render('add'));
 // Login route
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect to the homepage

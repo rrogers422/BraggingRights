@@ -10,6 +10,16 @@ body {
   height: 100%;
 }
 
+body{
+  background-image: url("../Images/blue_rays.jpeg");
+ background-repeat: no-repeat;
+background-size: cover;
+}
+
+.body::before{
+  opacity: 0.2;
+}
+
 nav{
   text-align: center;
 }
@@ -19,8 +29,8 @@ h1{
   font-size: 55px;
 }
 
-.container{
-  background-color: yellowgreen;
+.container1{
+  background-color: rgba(45, 184, 219, 0.692);
 }
 
 .form-signin {
@@ -29,6 +39,7 @@ h1{
   padding: 15px;
   margin: auto;
 }
+
 
 .form-signin input[type="email"] {
   margin-bottom: -1px;
@@ -42,3 +53,8 @@ h1{
   border-top-right-radius: 0;
 }
 
+h3{
+  font-size: 30px;
+  text-align: center;
+
+}
