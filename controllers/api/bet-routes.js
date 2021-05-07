@@ -7,24 +7,26 @@ const withAuth = require('../../utils/auth');
 router.get('/active', withAuth, async (req, res) => {
   try {
     const bets = await Bet.findAll({
-        where: {user_id: req.sessionl.user_id, status: "accepted" },
-        attributes: ['terms','prize','user_id','status', 'id'],
+        where: {user_id: req.session.user_id, status: "accepted" },
+        attributes: ['id','terms','prize','user_id','status'],
       });
     
     const deBets = bets.map((i) => i.get({ plain: true }));
     console.log(deBets);
     res.render('bet', {deBets});
   } catch (err) {
-    const errMessage = "Sorry, no active bets found for this user";
-    res.status(400).render('home', {errMessage})
+    // const errMessage = "Sorry, no active bets found for this user";
+    // res.status(400).render('home', {errMessage})
+    res.status(400).json(err);
   }
 });
 
+// Route to display all pending bets
 router.get('/pending', withAuth, async (req, res) => {
   try {
     const pBets = await Bet.findAll({
         where: {user_id: req.session.user_id, status: "Not accepted" },
-        attributes: ['terms','prize','user_id','status'],
+        attributes: ['id','terms','prize','user_id','status'],
       });
     
     const pDeBets = pBets.map((i) => i.get({ plain: true }));
@@ -37,7 +39,6 @@ router.get('/pending', withAuth, async (req, res) => {
 });
 
 //route for creating new bets
-
 router.post('/', async (req, res) => {
     try {
         const newBet = await Bet.create({
@@ -45,48 +46,22 @@ router.post('/', async (req, res) => {
             prize: req.body.prize,
             user_id: req.session.user_id,
             });
-            res.status(200).json(newBet);
+            res.status(200).redirect();
           } 
           catch (err) {
             res.status(400).json(err);
             }
 });
 
-// router.put('/win', async (req, res) => {
-//   try {
-//   History.increment (
-//     {wins}
-//   );
-//   }
-//   catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
-
-//   router.put('/loss', async (req, res) => {
-//     try {
-//     History.increment (
-//       {losses}
-//     );
-//     }
-//     catch (err) {
-//       res.status(400).json(err);
-//     }
-//   })
-
-// router.get('/numActive', async (req, res) => {
-//   try {
-//       const num = await Bet.count({where: {user_id: req.session.id, status: "accepted"}});
-//       res.status(200).json(num);
-//   }
-//   catch (err){
-//       res.status(400).json(err);
-//   }
-
-// })
-
-
-
+// Route to update Bet status to "Accepted"
+router.put('/status/:id', withAuth, async (req, res) => {
+  try {
+  const updStatus = await Bet.update({status: 'Accepted'}, {where: {id: req.params.id}});
+  res.redirect('/');
+} catch(err) {
+  res.status(500).json(err.message);
+}
+});
 
 
 module.exports = router;
