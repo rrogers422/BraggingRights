@@ -25,13 +25,6 @@ History.init({
           key: 'id',
         },
     },
-    bet_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'bet',
-          key: 'id',
-        },
-    },
 },
 {
     sequelize,

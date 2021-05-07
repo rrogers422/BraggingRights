@@ -6,7 +6,7 @@ const betdata = [
         prize: 'Buy dinner',
         user_id: 1,
         challenger_id: 2,
-        status:'accepted'
+        status:'Accepted'
     },
     {
         terms: 'Do not shave beard for 2 months',
@@ -20,14 +20,14 @@ const betdata = [
         prize: 'Buy a beer',
         user_id: 3,
         challenger_id: 1,
-        status:'accepted'
+        status:'Accepted'
     },
     {
         terms: 'Throw a rock further',
         prize: '$20',
         user_id: 1,
         challenger_id: 3,
-        status:'accepted'
+        status:'Accepted'
     }
 ];
 
