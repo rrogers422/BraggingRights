@@ -14,11 +14,7 @@ router.get('/active/bets', async (req,res) =>{
             [Op.like]: 'accepted'
           }
        },
-      //  attributes: ['id', 'count']
       })
-      // console.log(activeBets);
-      let betCount = activeBets.count;
-      // console.log("betcount is:",betCount )
       res.json(activeBets.count);
     }catch(err){
       console.log(err.message);
