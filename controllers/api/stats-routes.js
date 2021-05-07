@@ -15,6 +15,7 @@ router.get('/active/bets', async (req,res) =>{
           }
        },
       })
+
       res.json(activeBets.count);
     }catch(err){
       console.log(err.message);
