@@ -30,7 +30,7 @@ router.get('/pending', withAuth, async (req, res) => {
     
     const pDeBets = pBets.map((i) => i.get({ plain: true }));
     console.log(pDeBets);
-    res.render('bet', {deBets});
+    res.render('bet', {pDeBets});
   } catch (err) {
       res.status(400).json(err.message);
   }
