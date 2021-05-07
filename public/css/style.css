@@ -10,6 +10,16 @@ body {
   height: 100%;
 }
 
+.container3{
+  margin-left: 825px;
+  border: black;
+}
+
+header.container3{
+  color: rgba(0, 0, 0, 0.568);
+}
+
+
 body{
   background-image: url("../Images/blue_rays.jpeg");
  background-repeat: no-repeat;
@@ -18,6 +28,10 @@ background-size: cover;
 
 .jumbotron{
   background-color: rgb(215, 231, 67);
+}
+
+.img{
+  background-image: ;
 
 }
 
