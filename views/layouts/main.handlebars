@@ -20,10 +20,11 @@
   </header>
   <nav>
     <a href="/betStats">Home</a>
-        <a href="/signup">Sign Up</a>
     {{#if logged_in}}
     <a href="/" id="logout">Logout</a>
+    <a href="/">Create Bet</a>
     {{else}}
+    <a href="/signup">Sign Up</a>
     <a href="/login">Login</a>
     {{/if}}
   </nav>
