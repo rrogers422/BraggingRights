@@ -1,19 +1,27 @@
-
 {{#if bets.length}}
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src= "../public/Images/dice.jpeg">
-    <div class="card-header">
-        <h3 class="card-title">Bet History</h3>
-        <ul class="list-group list-group-flush">
+<h3 class="card-title">Bet History</h3>
+<div class="row">
+    <section class="container">
         {{#each bets as |bet|}}
-        <p>{{bet.user.username}}</p>
-        <p>{{bet.bet.terms}}</p>
-        <p>{{bet.bet.prize}}</p>
-        <p>{{bet.bet.status}}</p>
-        <a style="font-size:smaller">{{user.name}}</a>
-        {{/each}}
-        </ul>
-    </div>
-</div>
 
-{{/if}}
+        <div class="col">
+
+            <div class="card">
+
+                <ul class="list-group list-group-flush">
+                    <h4>Username: {{bet.user.username}}</h4>
+                    <p> Terms: {{bet.bet.terms}}</p>
+                    <p>Prize: {{bet.bet.prize}}</p>
+                    <p>{{bet.bet.status}}</p>
+                    <a style="font-size:smaller">{{user.name}}</a>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        {{/each}}
+    </section>
+
+    {{/if}}
