@@ -14,11 +14,11 @@ const User = require('./User');
 User.hasMany(Bet, {
     foreignKey: 'user_id'
 })
-// Bet.hasMany(User, {
-//     foreignKey: 'user_id'
-// })
+
 Bet.belongsTo(User);
+
 History.belongsTo(User);
+History.belongsTo(Bet);
 
 
 module.exports = {
