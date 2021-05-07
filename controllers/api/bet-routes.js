@@ -7,7 +7,7 @@ const withAuth = require('../../utils/auth');
 router.get('/active', withAuth, async (req, res) => {
   try {
     const bets = await Bet.findAll({
-        where: {user_id: 1, status: "accepted" },
+        where: {user_id: req.sessionl.user_id, status: "accepted" },
         attributes: ['terms','prize','user_id','status', 'id'],
         // include: [{model: User, through: {attributes: ['username']}, attributes: { exclude : ['id', 'email', 'password']}}],
       });
@@ -23,14 +23,14 @@ router.get('/active', withAuth, async (req, res) => {
 router.get('/pending', withAuth, async (req, res) => {
   try {
     const pBets = await Bet.findAll({
-        where: {user_id: 1, status: "Not accepted" },
+        where: {user_id: req.session.user_id, status: "Not accepted" },
         attributes: ['terms','prize','user_id','status'],
         // include: [{model: User, through: {attributes: ['username']}, attributes: { exclude : ['id', 'email', 'password']}}],
       });
     
     const pDeBets = pBets.map((i) => i.get({ plain: true }));
     console.log(pDeBets);
-    res.render('bet', {pDeBets});
+    res.render('pending', {pDeBets});
   } catch (err) {
       res.status(400).json(err.message);
   }

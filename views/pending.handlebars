@@ -1,5 +1,5 @@
-<h2>Active bets:</h2> 
-{{#each deBets as |bet|}}
+<h2>Pending bets:</h2> 
+{{#each pDeBets as |bet|}}
 <div class = "container">
 <section class="active-bet">
   <div class="bet-header">
@@ -9,14 +9,14 @@
     <h4> The Prize:</h4>
     <p>{{bet.prize}}</p>
 
-  <div class="dropdown">
+  {{!-- <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Result(Select)
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
     <form action="/api/history/status" method="PUT"></form>
     <li><input class = "" type = "submit" value = "Win" name = "Win"></li>
     <li><input type = "submit" value = "Loss" name = "Loss"></li>
-    {{!-- <li><a href="#"></a></li> --}}
+    <li><a href="#"></a></li> --}}
   </ul>
   </div>
   </div>
