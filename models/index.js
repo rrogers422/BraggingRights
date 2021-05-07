@@ -18,10 +18,13 @@ Bet.belongsTo(User);
 User.hasMany(Bet, {
     foreignKey: 'user_id'
 })
-// Bet.hasMany(User, {
-//     foreignKey: 'user_id'
-// })
+
+Bet.hasMany(History, {
+    foreignKey: 'bet_id'
+})
+
 Bet.belongsTo(User);
+
 History.belongsTo(User);
 
 
