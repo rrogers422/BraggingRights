@@ -6,10 +6,9 @@
         <h3 class="card-title">Bet History</h3>
         <ul class="list-group list-group-flush">
         {{#each bets as |bet|}}
-        <p>{{bet.user.username}}</p>
-        <p>{{bet.bet.terms}}</p>
-        <p>{{bet.bet.prize}}</p>
-        <p>{{bet.bet.status}}</p>
+        <p>Name: {{bet.user.username}}</p>
+        <p>Wins: {{bet.wins}}</p>
+        <p>Loss: {{bet.losses}}</p>
         <a style="font-size:smaller">{{user.name}}</a>
         {{/each}}
         </ul>
