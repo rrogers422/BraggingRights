@@ -10,13 +10,12 @@ router.get('/active', withAuth, async (req, res) => {
         where: {user_id: req.session.user_id, status: "accepted" },
         attributes: ['id','terms','prize','user_id','status'],
       });
-    
+    console.log(bets);
+
     const deBets = bets.map((i) => i.get({ plain: true }));
     console.log(deBets);
     res.render('bet', {deBets});
   } catch (err) {
-    // const errMessage = "Sorry, no active bets found for this user";
-    // res.status(400).render('home', {errMessage})
     res.status(400).json(err);
   }
 });
@@ -33,8 +32,7 @@ router.get('/pending', withAuth, async (req, res) => {
     console.log(pDeBets);
     res.render('pending', {pDeBets});
   } catch (err) {
-    const errMessage = "Sorry, no pending bets found for this user";
-    res.status(400).render('home', {errMessage})
+    res.status(400).json(err);
   }
 });
 
@@ -45,7 +43,7 @@ router.post('/', async (req, res) => {
             prize: req.body.prize,
             user_id: req.session.user_id,
             });
-            res.status(200).redirect();
+            res.status(200).redirect('/');
           } 
           catch (err) {
             res.status(400).json(err);
