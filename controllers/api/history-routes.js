@@ -21,12 +21,13 @@ router.get('/', withAuth, async (req, res) => {
   }]
   })
   const bets = betHistoryData.map(bet => bet.get({ plain: true }));
-  console.log(bets);
   res.render('history', { bets });
   }catch (err) {
     res.status(500).json(err.message);
   }
 });
-router.get('/win')
+router.get('/win', withAuth, async (req, res) => {
+  
+})
 
 module.exports = router;

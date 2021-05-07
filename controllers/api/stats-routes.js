@@ -16,9 +16,9 @@ router.get('/active/bets', async (req,res) =>{
        },
       //  attributes: ['id', 'count']
       })
-      console.log(activeBets);
+      // console.log(activeBets);
       let betCount = activeBets.count;
-      console.log("betcount is:",betCount )
+      // console.log("betcount is:",betCount )
       res.json(activeBets.count);
     }catch(err){
       console.log(err.message);
