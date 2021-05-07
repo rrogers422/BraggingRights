@@ -1,3 +1,6 @@
+{{#if !user_id}}
+<h1>No bets found!</h1>
+{{else}}
 <h2>Active bets:</h2> 
 {{#each deBets as |bet|}}
 <div class = "container">
@@ -26,3 +29,4 @@
 </div>
 
 {{/each}}
+{{/if}}

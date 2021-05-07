@@ -35,11 +35,10 @@ router.post('/', async (req, res) => {
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       }
-      console.log(userData)
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
-        
+           
         res.json({ user: userData, message: 'You are now logged in!' });
       });
   
