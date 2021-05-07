@@ -76,21 +76,4 @@ router.get('/active/bets', async (req,res) =>{
     }
   })
 
-  // Route to get number of wins and losses
-  router.get('/wins-losses', async (req,res) =>{
-    try{
-      const userStats = await History.findAndCountAll({
-        user_id: req.session.user_id,
-        where: {
-          status: {
-            [Op.like]: 'accepted'
-          }
-       },
-      })
-      res.json(activeBets.count);
-    }catch(err){
-      console.log(err.message);
-      res.status(500).json(err);
-    }
-  })
 module.exports = router;
