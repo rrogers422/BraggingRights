@@ -6,7 +6,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/',withAuth, async(req, res) => {
     let activeBets = await Bet.findAndCountAll({
-      user_id: req.session.user_id,
           where: {
             status: {
               [Op.like]: 'accepted'
@@ -15,7 +14,6 @@ router.get('/',withAuth, async(req, res) => {
     })
   
     let pendingBets = await Bet.findAndCountAll({
-      user_id: req.session.user_id,
           where: {
             status: {
               [Op.like]: 'Not accepted'

@@ -11,17 +11,24 @@ History.init({
         autoIncrement: true,
       },
     wins: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     losses: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     user_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'user',
+          key: 'id',
+        },
+    },
+    bet_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'bet',
           key: 'id',
         },
     },
