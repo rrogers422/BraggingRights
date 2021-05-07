@@ -36,14 +36,14 @@ router.get('/pending', withAuth, async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const newBet = await Bet.create({
             terms: req.body.terms,
             prize: req.body.prize,
             user_id: req.session.user_id,
             });
-            res.status(200).redirect('/');
+            res.status(200).redirect('/', {logged_in: req.session.logged_in});
           } 
           catch (err) {
             res.status(400).json(err);
