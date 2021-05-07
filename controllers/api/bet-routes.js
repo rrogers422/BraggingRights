@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Bet, User, UserBet } = require('../../models');
+const { Bet, History } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -14,7 +14,7 @@ router.get('/active', withAuth, async (req, res) => {
 
     const deBets = bets.map((i) => i.get({ plain: true }));
     console.log(deBets);
-    res.render('bet', {deBets});
+    res.render('bet', {deBets, logged_in: req.session.logged_in});
   } catch (err) {
     res.status(400).json(err);
   }
@@ -30,7 +30,7 @@ router.get('/pending', withAuth, async (req, res) => {
     
     const pDeBets = pBets.map((i) => i.get({ plain: true }));
     console.log(pDeBets);
-    res.render('pending', {pDeBets});
+    res.render('pending', {pDeBets, logged_in: req.session.logged_in});
   } catch (err) {
     res.status(400).json(err);
   }
@@ -60,5 +60,25 @@ router.put('/status/:id', withAuth, async (req, res) => {
 }
 });
 
+router.put('/status/wins/:id', withAuth, async (req, res) => {
+  try {
+  const newWin = await History.increment('wins', { where: { user_id: req.session.user_id}});
+  const updStatus = await Bet.update({status: 'Completed'}, {where: {id: req.params.id}});
+  res.redirect('/');
+  
+} catch(err) {
+  res.status(500).json(err.message);
+}
+});
+
+router.put('/status/losses/:id', withAuth, async (req, res) => {
+  try {
+    const newLoss = await History.increment('losses', { where: { user_id: req.session.user_id}})
+    const updStatus = await Bet.update({status: 'Completed'}, {where: {id: req.params.id}});
+    res.redirect('/');
+  } catch(err) {
+    res.status(500).json(err.message);
+  }
+})
 
 module.exports = router;
