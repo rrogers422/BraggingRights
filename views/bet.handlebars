@@ -8,15 +8,19 @@
     {{!-- <p>{{{destruct_users bet.users}}}</p> --}}
     <h4> The Prize:</h4>
     <p>{{bet.prize}}</p>
+    <p>{{bet.id}}</p>
 
   <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Result(Select)
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
-    <form action="/api/history/status" method="PUT"></form>
-    <li><input type = "submit" value = "Win" name = "Win"></li>
-    <li><input type = "submit" value = "Loss" name = "Loss"></li>
-    {{!-- <li><a href="#"></a></li> --}}
+    <form action="/api/history/status/wins/{{bet.id}}?_method=PUT" method="POST">
+      <li><input class = "valueSubmit" type = "submit" name = "wins" value = "Win"></li>
+    </form>
+    <form action="/api/history/status/losses/{{bet.id}}?_method=PUT" method="POST"></form>
+      <li><input class = "valueSubmit" type = "submit" name = "losses" value = "Loss"></li>
+    </form>
+    
   </ul>
   </div>
   </div>
