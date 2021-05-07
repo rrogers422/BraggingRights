@@ -19,13 +19,10 @@ User.hasMany(Bet, {
     foreignKey: 'user_id'
 })
 
-Bet.hasMany(History, {
-    foreignKey: 'bet_id'
-})
-
 Bet.belongsTo(User);
 
 History.belongsTo(User);
+History.belongsTo(Bet);
 
 
 module.exports = {
