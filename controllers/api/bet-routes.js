@@ -36,8 +36,6 @@ router.get('/pending', withAuth, async (req, res) => {
   }
 });
 
-router.get('/win', (req, res) => res.)
-//route for creating new bets
 
 router.post('/', async (req, res) => {
     try {
