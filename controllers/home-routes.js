@@ -6,8 +6,7 @@ const { Op } = require("sequelize");
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) =>{
-  console.log(req.session);
-  res.render('home');
+  res.render('home', {logged_in: req.session.logged_in});
 })
 
 router.get('/signup', (req, res) => {
