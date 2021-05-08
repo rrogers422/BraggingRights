@@ -11,39 +11,53 @@ body {
 }
 
 .container3{
-  margin-left: 825px;
+  margin-left: 600px;
   border: black;
 }
+<<<<<<< HEAD
 #logo {
   margin: auto;
 }
+=======
+
+>>>>>>> 8e62edd0bbc5ecfb90c9825883296f1263b713aa
 header.container3{
   color: rgba(0, 0, 0, 0.568);
 }
 
 
 body{
-  background-image: url("../Images/blue_rays.jpeg");
+  background-image: url("../Images/carddeck.jpeg");
  background-repeat: no-repeat;
 background-size: cover;
 }
 
 .jumbotron{
-  background-color: rgb(215, 231, 67);
+  background-color: rgba(20, 25, 53, 0.774);
 }
 
+h1.h3.mb-3.fw-normal{
+  color: bisque;
+}
+
+label{
+  color:bisque;
+}
 .img{
   background-image: ;
 
 }
 
 nav{
+  margin-top: 45px;;
   text-align: center;
+color: bisque;
 }
 
 h1{
   text-align: center;
   font-size: 55px;
+  color: antiquewhite;
 }
 
 a{
@@ -53,7 +67,7 @@ a{
 }
 
 .container1{
-  background-color: rgba(45, 184, 219, 0.692);
+  background-color: rgba(65, 13, 10, 0.726);
 }
 
 h1.display-4.fst-italic{
@@ -91,9 +105,69 @@ main.container{
 h3{
   font-size: 30px;
   text-align: center;
+  color: antiquewhite;
 
 }
 
 .card{
-  background-color: yellowgreen;
+  background-color: rgba(230, 191, 21, 0.795);
+  padding: 10,10,10,10;
 }
+
+
+
+h2{
+  color: antiquewhite;
+  font-size: 40px;
+  text-align: center;
+}
+
+
+h4{
+
+  color: antiquewhite;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.link{
+    color: antiquewhite;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  p{
+    color: blanchedalmond;
+    font-size: 20px;
+    text-align: center;
+
+  }
+
+  .AcceptBtn{
+
+  }
+
+  .pendBets{
+    margin-top: 70px;
+    margin-bottom: 70px;
+    text-decoration: underline;
+  }
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .flex-item,
+  .flex-item:first-child {
+    flex-basis: 100%;
+  }
+
+  @media screen and (max-width: 980px) {
+    header {
+      padding: 0 0 10px 0;
+      justify-content: center;
+      text-align: center;
+    }
