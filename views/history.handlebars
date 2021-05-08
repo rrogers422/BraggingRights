@@ -1,24 +1,28 @@
 
-{{#if bets.length}}
-<h3 class="card-title">Bet History</h3>
-<div class="row">
-    <section class="container">
-        {{#each bets as |bet|}}
 
-        <div class="col">
+        {{#if bets.length}}
 
-            <div class="card">
+        <h3 class="card-title">Bet History</h3>
 
-                <ul class="list-group list-group-flush">
-                    <h4>Username: {{bet.user.username}}</h4>
-                    <p>Wins: {{bet.wins}}</p>
-                    <p>Loss: {{bet.losses}}</p>
-                    <a style="font-size:smaller">{{user.name}}</a>
-                </ul>
+            {{#each bets as |bet|}}
+                    <div class="row">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Username: {{bet.user.username}}</li>
+                        <li class="list-group-item">Wins: {{bet.wins}}</li>
+                        <li class="list-group-item">Losses: {{bet.losses}}</li>
+                    </ul>
+
+
+                </div>
             </div>
         </div>
-
         {{/each}}
-    </section>
 
-    {{/if}}
+
+        {{/if}}

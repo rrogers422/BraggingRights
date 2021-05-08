@@ -1,12 +1,13 @@
-<h2>Pending bets:</h2> 
+<h2 class='pendBets'>Pending Bets</h2> 
 {{#each pDeBets as |bet|}}
 <div class = "container">
 <section class="active-bet">
   <div class="bet-header">
-    <h3> The Bet: {{bet.terms}}</h3>
-    <h4> The Bettors:</h4>
-    {{!-- <p>{{{destruct_users bet.users}}}</p> --}}
-    <h4> The Prize:</h4>
+    <h3> The Bet:</h3>
+    <p>{{bet.terms}}</p>
+    <h3> The Bettors:</h3>
+
+    <h3> The Prize:</h3>
     <p>{{bet.prize}}</p>
     <br>
     <form action="/api/bets/status/{{bet.id}}?_method=PUT" method="POST">
