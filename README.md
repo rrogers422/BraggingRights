@@ -32,7 +32,7 @@ Napkin Bets is a MVC based Bet tracking App that allows the user to create an ac
 - Run the script via command - node server.js
 - Navigate to the http://localhost:3001/
 
-## Run the script via command - node server.js
+## Code contribution
 https://nodejs.org/en/.
 https://www.npmjs.com/
 https://stackoverflow.com/
