@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Bet, History } = require('../../models');
+const { Bet, History, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -9,6 +9,10 @@ router.get('/active', withAuth, async (req, res) => {
     const bets = await Bet.findAll({
         where: {user_id: req.session.user_id, status: "accepted" },
         attributes: ['id','terms','prize','user_id','status'],
+        include: [{
+          model: User,
+          attributes: ['username']
+        }]
       });
     console.log(bets);
 
@@ -62,7 +66,9 @@ router.put('/status/:id', withAuth, async (req, res) => {
 
 router.put('/status/wins/:id', withAuth, async (req, res) => {
   try {
+  // const addId = await History.update({user_id: req.session.id})
   const newWin = await History.increment('wins', { where: { user_id: req.session.user_id}});
+  
   const updStatus = await Bet.update({status: 'Completed'}, {where: {id: req.params.id}});
   res.redirect('/');
   
