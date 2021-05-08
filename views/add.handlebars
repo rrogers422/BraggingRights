@@ -1,23 +1,40 @@
 <section id="add" class="container">
   <div class="form-wrap">
-    <h1>Add A Bet</h1>
+    <h6>Add A Bet</h6>
+
+<div class="row">
+   <div class="card" style="width: 80rem;">
+        <div class="card-body">
+
+
     <form action="/api/bets" method="POST">
       <div class="input-group">
         <label for="terms">Bet Terms</label>
         <input type="text" name="terms" id="title" class="input-box"
           placeholder="eg. Don't shave for 3 weeks, Win a game, etc." maxlength="300" value={{terms}}>
       </div>
+
+
+
       <div class="input-group">
         <label for="prize">Prize</label>
         <input type="text" name="prize" id="prize" class="input-box"
           placeholder="$20, Buy a beer, Buy dinner, Sell your children, etc." maxlength="100" value={{prize}}>
       </div>
+
+
+
       <div class="input-group">
         <label for="challenger">Your friend's username</label>
         <input type="text" name="username" id="username" class="input-box" placeholder="GullibleFriend08, etc."
           value={{username}}>
       </div>
+
+
       <input type="submit" value="Add Bet" class="btn btn-reverse">
     </form>
+    </div>
+  </div>
+  </div>
   </div>
 </section>

@@ -11,36 +11,41 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/jass.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<<<<<<< HEAD
-<body>
-  <header class= 'container3'>
-  <img id = "logo" src="https://lh3.googleusercontent.com/jBtn7vSZGBRhBCJFUNlHt3LWzBYIBlSgkEysQEjW0dDVdtaoq2Fr-hS81YL20yY1FpFHo-GscYxiOcZ77ENGiE3HaRNHZ1UW2c2chpMcmSpuTOvh_ewDKpjm_khS_PHj2tIjLUKLQw=s200-p-k" /> </a>
-  </header>
-=======
+
+
 <body style="
 margin-left: 25px;
 margin-right: 25px;">
   {{!-- <header class= 'container3'> --}}
-    <div class='jumbotron'></div>
+    <div class='jumbotron'>
 
-{{!-- <img src="https://lh3.googleusercontent.com/jBtn7vSZGBRhBCJFUNlHt3LWzBYIBlSgkEysQEjW0dDVdtaoq2Fr-hS81YL20yY1FpFHo-GscYxiOcZ77ENGiE3HaRNHZ1UW2c2chpMcmSpuTOvh_ewDKpjm_khS_PHj2tIjLUKLQw=s200-p-k" /> </a> --}}
-  {{!-- </header> --}}
->>>>>>> 8e62edd0bbc5ecfb90c9825883296f1263b713aa
+<img src="https://lh3.googleusercontent.com/SoknZ8VpCCRzCvfvbnHqH-oi7VpeVjeB5wxUK7K8JFGFiK19nNixGk3-RYvhmKuhSE-1LIV5K33cei6K_JiAAxI3bxGFoqgxEip_da8aQqc2cOWNQV6LvjllQkPioIDh_OYqFFmX1A=s200-p-k" />
+
+ </div>
   <nav>
     <a href="/"></a>
     {{#if logged_in}}
     <a href="#" id="logout">Logout</a>
     <a href="/add">Create Bet</a>
     <a href="/betStats">Your Stats</a>
+    {{!-- </div> --}}
+
+
     {{else}}
     <a href="/login">Login</a>
     <a href="/signup">Sign Up</a>
     {{/if}}
   </nav>
+  </header>
+
+
+
   <main>
     <div class="options">
       {{{body}}}
