@@ -49,7 +49,7 @@ https://handlebarsjs.com/
 Work in progress.
 
 ## Application deployed link
-
+https://sleepy-shore-86546.herokuapp.com/
 
 ## Application screenshot
 ![Napkin Bets Dashboard](./public/Images/application-screenshot.jpg?raw=true)
