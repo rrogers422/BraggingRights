@@ -59,7 +59,10 @@ label{
 
 input.btn.btn-reverse{
   font-size: medium;
-  background-color: rgba(20, 25, 53, 0.774);
+  background-color: white;
+  width: 100px;
+  border-radius: 2px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .input-label {
   padding-right: 10px;
