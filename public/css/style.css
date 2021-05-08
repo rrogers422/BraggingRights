@@ -14,7 +14,13 @@ body {
   margin-left: 600px;
   border: black;
 }
+<<<<<<< HEAD
+#logo {
+  margin: auto;
+}
+=======
 
+>>>>>>> 8e62edd0bbc5ecfb90c9825883296f1263b713aa
 header.container3{
   color: rgba(0, 0, 0, 0.568);
 }
