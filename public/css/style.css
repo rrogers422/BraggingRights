@@ -232,6 +232,7 @@ letter-spacing: 10px;
   .flex-item:first-child {
     flex-basis: 100%;
   }
+}
 
   @media screen and (max-width: 980px) {
     header {
@@ -239,3 +240,4 @@ letter-spacing: 10px;
       justify-content: center;
       text-align: center;
     }
+  }
