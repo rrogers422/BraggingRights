@@ -43,7 +43,7 @@ router.post('/', withAuth, async (req, res) => {
             prize: req.body.prize,
             user_id: req.session.user_id,
             });
-            res.status(200).redirect('/', {logged_in: req.session.logged_in});
+            res.status(200).redirect('/');
           } 
           catch (err) {
             res.status(400).json(err);
