@@ -48,21 +48,33 @@ label{
 
 .input-group{
   font-size: 30px;
+  margin-bottom: 45px;
 }
 
 .input-box{
-  font-size: 15px;
+  font-size: 25px;
+  width: 400px;
 }
 
 
 input.btn.btn-reverse{
   font-size: medium;
-
+  background-color: rgba(20, 25, 53, 0.774);
+}
+.input-label {
+  padding-right: 10px;
+  font-size: 30px;
+  color: white;
 }
 
 nav{
   text-align: center;
-color: bisque;
+  color: bisque;
+  padding-top: 10px;
+  
+}
+nav * {
+  margin-right: 30px;
 }
 
 h1{
@@ -131,9 +143,11 @@ h3{
 .card{
   background-color: rgba(230, 191, 21, 0.795);
   margin: auto;
-  margin-top: 45px;
+  margin-top: 20px;
   border-radius: 20px;
   box-shadow: 0px 25px 20px blanchedalmond;
+  height:350px;
+  padding: 15px;
 }
  
 
@@ -169,7 +183,7 @@ font-size: 60px;
 text-align: center;
 margin-top: 30px;
 margin-bottom: 45px;
-letter-spacing: 17px;
+letter-spacing: 10px;
 }
 
 
@@ -188,7 +202,7 @@ letter-spacing: 17px;
   }
 
   .AcceptBtn{
-    margin-left: 400px;
+    margin-left: 380px;
   }
 
   .pendBets{
@@ -218,6 +232,7 @@ letter-spacing: 17px;
   .flex-item:first-child {
     flex-basis: 100%;
   }
+}
 
   @media screen and (max-width: 980px) {
     header {
@@ -225,3 +240,4 @@ letter-spacing: 17px;
       justify-content: center;
       text-align: center;
     }
+  }

@@ -9,29 +9,29 @@
 
     <form action="/api/bets" method="POST">
       <div class="input-group">
-        <label for="terms">Bet Terms</label>
+        <label class = "input-label" for="terms">Bet Terms</label>
         <input type="text" name="terms" id="title" class="input-box"
-          placeholder="eg. Don't shave for 3 weeks, Win a game, etc." maxlength="300" value={{terms}}>
+          placeholder="e.g. Don't shave for 3 weeks" maxlength="300" value={{terms}}>
       </div>
 
 
 
       <div class="input-group">
-        <label for="prize">Prize</label>
+        <label class = "input-label" for="prize">Prize</label>
         <input type="text" name="prize" id="prize" class="input-box"
-          placeholder="$20, Buy a beer, Buy dinner, Sell your children, etc." maxlength="100" value={{prize}}>
+          placeholder="e.g. $20, Buy a beer..." maxlength="100" value={{prize}}>
       </div>
 
 
 
       <div class="input-group">
-        <label for="challenger">Your friend's username</label>
-        <input type="text" name="username" id="username" class="input-box" placeholder="GullibleFriend08, etc."
+        <label class = "input-label" for="challenger">Your friend's username</label>
+        <input type="text" name="username" id="username" class="input-box" placeholder="e.g. GullibleFriend08"
           value={{username}}>
       </div>
 
 
-      <input type="submit" value="Add Bet" class="btn btn-reverse">
+      <input type="submit" value="Add!" class="btn btn-reverse">
     </form>
     </div>
   </div>
